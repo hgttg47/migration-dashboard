@@ -1,0 +1,47 @@
+# Migration Research Dashboard — Daily Update
+#
+# Runs every morning at 06:00 UTC (07:00 CET / 08:00 CEST).
+# Fetches fresh data, regenerates index.html, and commits it.
+# GitHub Pages then serves the updated file automatically.
+#
+# You can also trigger it manually:
+#   GitHub → Actions tab → "Daily Dashboard Update" → Run workflow
+
+name: Daily Dashboard Update
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # 06:00 UTC daily
+  workflow_dispatch:        # manual trigger button in GitHub UI
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write       # required to commit and push index.html
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate dashboard
+        run: python fetch_and_generate.py
+
+      - name: Commit and push updated dashboard
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          # Only commit if index.html actually changed
+          git diff --staged --quiet || \
+            git commit -m "Daily update — $(date -u +'%Y-%m-%d')"
+          git push
