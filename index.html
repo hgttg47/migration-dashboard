@@ -3,22 +3,439 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Migration Research Dashboard</title>
+<title>Migration Research Dashboard — 23 June 2026</title>
 <style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    display: flex; align-items: center; justify-content: center;
-    min-height: 100vh; margin: 0; background: #F8F9FA; color: #2D3748;
-  }
-  .box { text-align: center; max-width: 420px; padding: 40px 24px; }
-  h1 { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; }
-  p  { font-size: .9rem; color: #718096; line-height: 1.6; }
+:root {
+  --bg:      #F8F9FA;
+  --card:    #FFFFFF;
+  --border:  #E2E8F0;
+  --text:    #1A202C;
+  --muted:   #718096;
+  --accent:  #2D3748;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 15px; line-height: 1.55;
+  background: var(--bg); color: var(--text);
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+header {
+  background: #fff; border-bottom: 1px solid var(--border);
+  padding: 18px 32px; display: flex; align-items: baseline; gap: 14px;
+  flex-wrap: wrap;
+}
+header h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.2px; }
+header .date { color: var(--muted); font-size: .82rem; }
+header .stats { margin-left: auto; color: var(--muted); font-size: .78rem; }
+
+/* ── Tabs ── */
+nav.tabs {
+  background: #fff; border-bottom: 1px solid var(--border);
+  padding: 0 28px; display: flex; overflow-x: auto; gap: 0;
+}
+.tab {
+  background: none; border: none; border-bottom: 2px solid transparent;
+  padding: 11px 16px; cursor: pointer; font-size: .86rem; color: var(--muted);
+  font-family: inherit; white-space: nowrap; transition: color .15s;
+}
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+
+/* ── Content ── */
+main { max-width: 820px; margin: 0 auto; padding: 22px 16px; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ── Cards ── */
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 6px; padding: 14px 16px; margin-bottom: 10px;
+}
+.card h3 { font-size: .93rem; font-weight: 600; line-height: 1.35; margin-bottom: 5px; }
+.card h3 a { color: var(--text); }
+.card h3 a:hover { color: #4A5568; }
+.summary { font-size: .82rem; color: #4A5568; margin-bottom: 7px; }
+.meta { font-size: .75rem; color: var(--muted); }
+.authors { font-size: .8rem; color: #4A5568; margin-bottom: 3px; }
+
+/* ── Badges ── */
+.badges { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.badge {
+  font-size: .69rem; font-weight: 700; padding: 2px 7px;
+  border-radius: 20px; white-space: nowrap; letter-spacing: .2px;
+}
+
+/* ── Research Design tab ── */
+.rd-card { border-left: 3px solid #CBD5E0; }
+.rationale { margin-top: 9px; padding-left: 16px; font-size: .8rem; color: #4A5568; }
+.rationale li { margin-bottom: 4px; }
+
+/* ── Prediction Markets ── */
+.prob-row { display: flex; align-items: center; gap: 10px; margin: 8px 0 4px; }
+.prob-bg { flex: 1; height: 5px; background: #E2E8F0; border-radius: 3px; overflow: hidden; }
+.prob-bar { height: 100%; border-radius: 3px; }
+.prob-val { font-size: .84rem; font-weight: 700; min-width: 36px; }
+
+/* ── Empty state ── */
+.empty { color: var(--muted); font-size: .88rem; padding: 20px 0; }
 </style>
 </head>
 <body>
-<div class="box">
+<header>
   <h1>Migration Research Dashboard</h1>
-  <p>The dashboard is being set up. It will populate automatically after the first scheduled run.</p>
-</div>
+  <span class="date">23 June 2026</span>
+  <span class="stats">12 items · 0 research design flags</span>
+</header>
+<nav class="tabs">
+  <button class="tab active" data-tab="eu">EU Migration</button>
+  <button class="tab" data-tab="swiss">Switzerland</button>
+  <button class="tab" data-tab="global">Global</button>
+  <button class="tab" data-tab="papers">Academic Papers</button>
+  <button class="tab" data-tab="rd">Research Design</button>
+  <button class="tab" data-tab="markets">Prediction Markets</button>
+</nav>
+<main>
+  <section id="eu"      class="tab-content active"><article class="card">
+  <a href="https://www.migrationpolicy.org/research/guatemala-perfiles-migrantes-retornados" target="_blank" rel="noopener"><h3>Reconstruyendo vidas en Guatemala: Entendiendo los perfiles de los migrantes retornados y los retos para su reintegración</h3></a>
+  <p class="summary">Reports
+      
+
+
+
+    
+          June 2026
+      
+
+
+
+    
+          Reconstruyendo vidas en Guatemala: Entendiendo los perfiles de los migrantes retornados y los retos para su reintegración 
+      
+
+
+
+
+  
+          
+              Authors&amp;nbsp;
+      Ariel G. Ruiz Soto, María Jesús Mora and Diego Chaves-González
+      
+
+
+
+
+  
+          
+      Illegal Immigration &amp;amp; Interior Enforcement
+         </p>
+  <div class="meta">Migration Policy Institute · Wed, 17 Jun 2026</div>
+  
+</article>
+<article class="card">
+  <a href="https://www.migrationpolicy.org/article/syrian-immigrants-united-states" target="_blank" rel="noopener"><h3>Syrian Immigrants in the United States</h3></a>
+  <p class="summary">Syrian Immigrants in the United States
+      
+
+
+
+    
+          June 11, 2026
+      
+
+
+
+    
+          Spotlight
+      
+
+
+
+
+  
+          
+              By      Kyung Ju Lee and Jeanne Batalova
+      
+
+
+
+    
+          
+      
+
+
+
+    
+          
+      
+
+
+
+    
+          A young woman in Washington, DC. (Photo: iStock.com/BDphoto)
+
+      
+
+
+
+    
+          Amid Syria’s devastating civil war, the num</p>
+  <div class="meta">Migration Policy Institute · Fri, 05 Jun 2026</div>
+  
+</article>
+<article class="card">
+  <a href="https://www.migrationpolicy.org/article/pakistan-climate-displacement" target="_blank" rel="noopener"><h3>From Temporary Climate-Induced Displacement to Permanent Urban Settlement in Pakistan</h3></a>
+  <p class="summary">From Temporary Climate-Induced Displacement to Permanent Urban Settlement in Pakistan
+      
+
+
+
+    
+          June 4, 2026
+      
+
+
+
+    
+          Feature
+      
+
+
+
+
+  
+          
+              By      Nasrat Sayed
+      
+
+
+
+    
+          
+      
+
+
+
+    
+          
+      
+
+
+
+    
+          Flooding in Pakistan in 2025. (Photo: Kamran Khan/iStock.com)
+
+      
+
+
+
+    
+          Pakistan is among </p>
+  <div class="meta">Migration Policy Institute · Wed, 03 Jun 2026</div>
+  
+</article>
+<article class="card">
+  <a href="https://www.migrationpolicy.org/multimedia/climate-migration-health" target="_blank" rel="noopener"><h3>Climate Change Is Making People Sick. Can Migration Help?</h3></a>
+  <p class="summary">Photo Caption/Credit&amp;nbsp;
+    
+          Sara Staedicke</p>
+  <div class="meta">Migration Policy Institute ·  ue, 26 May 2026</div>
+  
+</article>
+<article class="card">
+  <a href="https://www.migrationpolicy.org/article/immigration-restrictions-aid-central-america" target="_blank" rel="noopener"><h3>How Immigration Crackdowns and Aid Cuts Are Reshaping Migration Across Central America</h3></a>
+  <p class="summary">How Immigration Crackdowns and Aid Cuts Are Reshaping Migration Across Central America
+      
+
+
+
+    
+          May 20, 2026
+      
+
+
+
+    
+          Feature
+      
+
+
+
+
+  
+          
+              By      Pía Riggirozzi and Natalia Cintra
+      
+
+
+
+    
+          
+      
+
+
+
+    
+          
+      
+
+
+
+    
+          People on a motorbike at the Guatemala-Mexico border. (Photo: IOM/Muse Mohammed)
+
+  </p>
+  <div class="meta">Migration Policy Institute ·  ue, 19 May 2026</div>
+  
+</article>
+<article class="card">
+  <a href="https://www.migrationpolicy.org/article/brazilian-immigrants-united-states" target="_blank" rel="noopener"><h3>Brazilian Immigrants in the United States</h3></a>
+  <p class="summary">Brazilian Immigrants in the United States
+      
+
+
+
+    
+          May 14, 2026
+      
+
+
+
+    
+          Spotlight
+      
+
+
+
+
+  
+          
+              By      Marina Aragão Santos and Jeanne Batalova
+      
+
+
+
+    
+          
+      
+
+
+
+    
+          
+      
+
+
+
+    
+          People holding Brazilian flags. (Photo: iStock.com/Denisfilm)
+
+      
+
+
+
+    
+          The United States is home to the</p>
+  <div class="meta">Migration Policy Institute · Wed, 13 May 2026</div>
+  
+</article>
+<article class="card">
+  <a href="https://www.migrationpolicy.org/article/central-asian-migrants-new-destinations" target="_blank" rel="noopener"><h3>Central Asian Migrants Look Beyond Russia, Yet New Destinations Carry Challenges Too</h3></a>
+  <p class="summary">Central Asian Migrants Look Beyond Russia, Yet New Destinations Carry Challenges Too
+      
+
+
+
+    
+          May 7, 2026
+      
+
+
+
+    
+          Feature
+      
+
+
+
+
+  
+          
+              By      Nodira Kholmatova and Nodira Abdulloeva
+      
+
+
+
+    
+          
+      
+
+
+
+    
+          
+      
+
+
+
+    
+          A road sign in Kazakhstan. (Photo: Stephen Anthony Rohan/iStock.com)
+
+      
+
+
+
+ </p>
+  <div class="meta">Migration Policy Institute · Mon, 04 May 2026</div>
+  
+</article></section>
+  <section id="swiss"   class="tab-content"><article class="card">
+  <a href="https://www.nzz.ch/international/migrationskrise-in-europa-die-wichtigsten-fakten-und-news-ld.1535949" target="_blank" rel="noopener"><h3>DIE NEUESTEN ENTWICKLUNGEN - Migrationskrise in Europa: Boot gekentert – Weitere Leichen vor libyscher Küste angeschwemmt</h3></a>
+  <p class="summary">Die griechischen Inseln, die Balkanroute, der Ärmelkanal: Neben den Fluchtbewegungen aus der Ukraine versuchen noch immer täglich Migranten, unter Lebensgefahr nach Europa zu gelangen.</p>
+  <div class="meta">NZZ (English) ·  ue, 23 Jun 2026</div>
+  
+</article>
+<article class="card">
+  <a href="https://www.nzz.ch/international/flugzeuge-aus-pluesch-und-abschiebungen-als-mitgroell-schlager-die-fpoe-provoziert-mit-ihrem-remigrationssong-ld.10012393" target="_blank" rel="noopener"><h3>Flugzeuge aus Plüsch und Abschiebungen als Mitgröl-Schlager – die FPÖ provoziert mit ihrem «Remigrationssong»</h3></a>
+  <p class="summary">Österreichs stärkste Partei sorgt für Kontroversen mit einem Lied, das Ausschaffungen feiert. Sie banalisiert damit einen rechtsextrem konnotierten Begriff, der anderen Rechtsaussenparteien zu radikal ist.</p>
+  <div class="meta">NZZ (English) ·  ue, 23 Jun 2026</div>
+  
+</article>
+<article class="card">
+  <a href="https://www.srf.ch/kultur/gesellschaft-religion/arbeitsintegration-zurueck-im-beruf-der-lange-weg-qualifizierter-migrantinnen" target="_blank" rel="noopener"><h3>Arbeitsintegration – Zurück im Beruf: der lange Weg qualifizierter Migrantinnen</h3></a>
+  <p class="summary">Hochqualifiziert, motiviert und trotzdem lange ohne Job: Ein Mentoring‑Programm zeigt Chancen und Grenzen.</p>
+  <div class="meta">SRF.ch · Mon, 15 Jun 2026</div>
+  
+</article>
+<article class="card">
+  <a href="https://www.srf.ch/news/schweiz/strafgericht-baselland-amtsmissbrauch-freispruch-fuer-migrationsbeamtin" target="_blank" rel="noopener"><h3>Strafgericht Baselland – Amtsmissbrauch: Freispruch für Migrationsbeamtin</h3></a>
+  <p class="summary">Das Gericht hat eine frühere Migrationsbeamtin vom Vorwurf Amtsmissbrauch und anderen Anklagepunkten freigesprochen.</p>
+  <div class="meta">SRF.ch ·  ue, 23 Jun 2026</div>
+  
+</article>
+<article class="card">
+  <a href="https://www.srf.ch/news/schweiz/strafgericht-baselland-migrationsbeamtin-soll-jahrelang-auslaender-schikaniert-haben" target="_blank" rel="noopener"><h3>Strafgericht Baselland – Migrationsbeamtin soll jahrelang Ausländer schikaniert haben</h3></a>
+  <p class="summary">Amtsmissbrauch und -geheimnisverletzung: Jahrelang hat die Frau laut Anklage Gesuchstellenden das Leben schwer gemacht.</p>
+  <div class="meta">SRF.ch · Mon, 22 Jun 2026</div>
+  
+</article></section>
+  <section id="global"  class="tab-content"><p class="empty">No global migration articles found today.</p></section>
+  <section id="papers"  class="tab-content"><p class="empty">No recent papers found in target journals.</p></section>
+  <section id="rd"      class="tab-content"><p class="empty">No research design opportunities flagged today.</p></section>
+  <section id="markets" class="tab-content"><p class="empty">No migration-related prediction markets found today.</p></section>
+</main>
+<script>
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+</script>
 </body>
 </html>
